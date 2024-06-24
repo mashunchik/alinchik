@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Alichka</title>
+  <link rel="stylesheet" href="./styles1.css">
+
+</head>
+
+<body>
+  <div id="heart-container"></div>
+
+  <div id="drag-container">
+    <div id="spin-container">
+
+      <img src="cat-6.jpg" alt="">
+      <img src="cat-1.jpg" alt="">
+      <img src="cat-2.jpg" alt="">
+      <img src="cat-3.jpg" alt="">
+      <img src="cat-4.jpg" alt="">
+      <img src="cat-5.jpg" alt="">
+
+    </div>
+    <div id="ground"></div>
+  </div>
+
+  <div id="music-container"></div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+    setInterval(createHearts, 500); // Створює серця кожну десяту частину секунди
+});
+
+function createHearts() {
+    const numHearts = 5; // Змінюємо кількість сердець, які створюються кожну десяту частину секунди
+
+    for (let i = 0; i < numHearts; i++) {
+        createHeart();
+    }
+}
+
+function createHeart() {
+    const heart = document.createElement('div');
+    heart.classList.add('heart');
+    heart.innerHTML = '❤️';
+    heart.style.left = Math.random() * window.innerWidth + 'px';
+    heart.style.top = Math.random() * window.innerHeight + 'px'; // Початкові позиції сердець
+    document.body.appendChild(heart);
+}
+  
+  </script>
+
+  <script src="./script1.js"></script>
+
+</body>
+
+</html>
